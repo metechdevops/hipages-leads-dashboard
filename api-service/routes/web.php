@@ -27,4 +27,7 @@ $router->group(['prefix' => 'api/v1/'], function () use ($router) {
     $router->get('job', ['as' => 'job', 'uses' => 'JobController@index']);
     $router->put('job', ['as' => 'job.update', 'uses' => 'JobController@update']);
     
+    $router->get('/get-container-ip', function () use ($router) {
+        dd(request()->ip()); 
+    });
 });
